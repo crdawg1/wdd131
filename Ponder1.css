@@ -1,0 +1,44 @@
+body {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: lightgray;
+    outline-style: solid;
+    outline-width: thin;
+    padding: 2%;
+}
+
+p#subhead {
+    font-size: large;
+    color: royalblue;
+}
+
+hr {
+    background-color: royalblue;
+    height: 2px;
+}
+img {
+height: 100px;
+width: 300px;
+}
+
+div#topics{
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    text-align: center;
+}
+
+div.list {
+    text-align: justify;
+    width: 250px;
+    height: auto;
+    margin-left: 25px;
+}
