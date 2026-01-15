@@ -13,7 +13,7 @@
         <h1>HTML, CSS, and JS</h1>
         <p id="subhead">The foundational technologies that power websites and web applications</p>
         <hr>
-        <img src="https://wddbyui.github.io/wdd131/images/trifecta.png" alt="JS, CSS, and HTML logos">
+        <img src="https://wddbyui.github.io/wdd131/images/trifecta.png" alt="JS, CSS, and HTML logos", id = "logo">
         <div id="topics">
             <h2>HyperText Markup Language</h2>
             <div class="list">
@@ -27,9 +27,34 @@
             <div class="list">
                 <p>Adds interactivity and dynamic behavior. Without JavaScript nothing on the page responds dynamically to user actions.</p>
             </div>
-            <script src="week1.js" defer></script>
-        </div>
-    </div>
+            <br>
+            <br>
+            <br>
+    
+    <label for="webdevlist">Choose One:</label>
+    <select name="code" id="webdevlist">
+        <option>Choose One:</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JavaScript</option>
+    </select>
+
+    <script>
+        let selectElem = document.getElementById('webdevlist');
+        selectElem.addEventListener('change', function(){
+            let codeValue = selectElem.value;
+            console.log(codeValue);
+        })
+
+        let selectLogo = document.getElementById('logo');
+        selectLogo.addEventListener('change', function(){
+            let codeValue = selectElem.value;
+            console.log(codeValue);
+        })
+        .getElementById("logo").setAttribute("Image", "HTML")
+    
+    </script>
+
 </body>
 </html>
                     
