@@ -1,60 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="description" content="An in-depth guide to HTML meta tags.">
-    <meta name="author" content="Jane Doe">
-    <link rel="stylesheet" href="Ponder1.css">
-
-    <title>dynamic web fundamentals</title>
-</head>
-
-<body>
-    <div id="content">
-        <h1>HTML, CSS, and JS</h1>
-        <p id="subhead">The foundational technologies that power websites and web applications</p>
-        <hr>
-        <img src="https://wddbyui.github.io/wdd131/images/trifecta.png" alt="JS, CSS, and HTML logos", id = "logo">
-        <div id="topics">
-            <h2>HyperText Markup Language</h2>
-            <div class="list">
-                <p>Defines the structure and content of a web page. Without HTML there's nothing for the browser to display.</p>
-            </div>
-            <h2>Cascading Style Sheets</h2>
-            <div class="list">
-                <p>Controls how the HTML elements look. Without CSS pages look plain and unstyled.</p>
-            </div>
-            <h2>JavaScript</h2>
-            <div class="list">
-                <p>Adds interactivity and dynamic behavior. Without JavaScript nothing on the page responds dynamically to user actions.</p>
-            </div>
-            <br>
-            <br>
-            <br>
-    
-    <label for="webdevlist">Choose One:</label>
-    <select name="code" id="webdevlist">
-        <option>Choose One:</option>
-        <option value="html">HTML</option>
-        <option value="css">CSS</option>
-        <option value="js">JavaScript</option>
-    </select>
-
-    <script>
-        let selectElem = document.getElementById('webdevlist');
-        selectElem.addEventListener('change', function(){
-            let codeValue = selectElem.value;
-            console.log(codeValue);
-        })
-
-        let selectLogo = document.getElementById('logo');
-        selectLogo.addEventListener('change', function(){
-            let codeValue = selectElem.value;
-            console.log(codeValue);
-        })
-        .getElementById("logo").setAttribute("Image", "HTML")
-    
-    </script>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 Dynamic Web Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+        <h1>Pick a Theme</h1>
+        <select id="theme-select">
+            <option value="">-- Select a Theme --</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+            <option value="desert">Desert</option>
+        </select>
+        <div class="content">
+            <p>Try switching themes to change the page's look!</p>
+        </div>
+        <img id="logo" src=" https://wddbyui.github.io/wdd131/images/wdd131.png" alt="WDD131 Dynamic Web Logo">
+    </div>
+  </body>
 </html>
-                    
+          
