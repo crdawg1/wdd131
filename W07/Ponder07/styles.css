@@ -29,8 +29,8 @@ body {
   grid-template-columns: 10px;
   grid-row: 2 / 4;
   grid-template-rows: 10px;
-  /* top: 40px;
-  right: -60px; */
+  top: 40px;
+  right: -60px;
   z-index: 1;
   background-color: lightgray;
   border: 1px solid black
@@ -65,5 +65,9 @@ body {
 .button {
     grid-column: 3 / 4;
     grid-row: -1 / -2;
+}
+
+.card-expiration input {
+  width:80px;
 }
 
