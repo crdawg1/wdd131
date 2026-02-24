@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Credit Card</title>
+</head>
+<body>
+    <form class="form-grid" action="">
+        <div class="card-front">
+            <div class="total">
+                <label for="totalBalance">Total: $200</label>
+            </div>
+
+            <div class="card-number">
+                <label for="cardNumber">CARD NUMBER</label>
+                <input type='number' id='number' name="cardNumber" placeholder="###" aria-labelledby="cardNumber">
+            </div>
+
+            <div class="card-holder">
+                <label for="cardHolder">CARD HOLDER</label>
+                <input type='text' id='cardHolder' name="holder" placeholder="Ben Dover" aria-labelledby="cardHolder">
+            </div>
+
+            <div class="card-expiration">
+                <label for="expirationDate">EXPIRATION</label>
+                <input type='text' id='month' name="expMonth" placeholder="MM" aria-labelledby="expirationDate">
+                <input type='text' id='year' name="expYear" placeholder="YY" aria-labelledby="expirationDate">
+            </div>
+        </div>
+
+        <div class="card-back">
+            <div class="stripe"></div>
+
+            <div class="code">
+                <label for="code">CVC/CVV</label>
+                <input type='number' id='code' name="code" placeholder="XXX" aria-labelledby="code">
+            </div>
+        </div>
+
+        <button class="button">
+            <label for="submit">Submit</label>
+        </button>
+
+    </form>
+</body>
+</html>
+
