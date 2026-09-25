@@ -1,3 +1,43 @@
+// functions
+// python:
+// def functionName():
+//     this is my function block
+
+function functionName(name) {
+    console.log('this is my function name: ' + name);
+}
+
+// call "invoke" the function
+// functionName("function");
+
+
+
+// event listeners
+    // retrieve someting from the DOM
+    let select = document.querySelector('#theme-select');
+    // add an event listener to it
+    // parameters: event type, function to call when event occurs
+    select.addEventListener('change', handleEvent);
+    // create a function to handle the event
+    function handleEvent(event) {
+        console.log(event);
+        console.log(event.target.value);
+    }
+
+
+
+
+
+// if statements
+
+
+
+
+
+
+
+
+
 
 let selectElem = document.querySelector('#theme-select');
 let pageContent = document.querySelector('body');
