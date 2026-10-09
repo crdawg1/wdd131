@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: lightgray;
+}
+
+header,
+footer {
+    max-width: auto;
+    border: 1px solid skyblue;
+    padding: 1rem;
+    background-color: skyblue;
+}
+
+main {
+    background-color: lightgray;
+    margin: 0;
+}
+
+h1,h2 {
+    text-align: center;
+}
+
+section {
+    padding: 5px;
+    background-color: white;
+    margin: 1em;
+    border: 1px solid #ccc;
+    max-width: 300px;
+}
+
+.gallery img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav a {
+    padding: 20px;
+    color: black;
+    display: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #616061;
+}
+
+.menu-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+}
+
+footer {
+    text-align: center;
+}
+
+/* modal */
+
+dialog img {
+    width: 90%;
+    display: block;
+    margin: 20vh auto;
+}
+dialog {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.75);
+}
+.close-viewer {
+    position: absolute;
+    top: 10vh;
+    right: 2vh;
+    padding: 3px 6px;
+    font-size: 1.5em;
+}
+
+
+@media screen and (min-width: 600px) {
+    nav a {
+        display: inline;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+    .menu-btn {
+        display: none;
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section {
+       max-width: 75%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    nav a {
+        display: flex;
+        justify-content: center;
+    }
+    .menu-btn {
+        display: none;
+    }
+    section {
+        max-width: 30%;
+        flex-wrap: nowrap;
+    }
+}
