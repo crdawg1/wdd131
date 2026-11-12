@@ -31,25 +31,27 @@ hr{
 margin-top: 50px;
 }
 
-
 @media (min-width: 760px) {
-    .gallery-container .media-card {
-        max-width: 200px;
-        max-height: 200px;
+    .media-card {
+        flex-direction: row;
     }
 
-    h2.gallery-container {
-        display: flex;
-    }
-    section.gallery-container {
-        display: flex;
-        flex-wrap: wrap;
+    .media-card-image {
+        flex: 1;
     }
 
-    div.gallery {
+    .media-card-content {
+        flex: 2;
+        padding: 0 10px;
+    }
+
+    .gallery {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 50px;
+    }
+
+    .gallery .media-card {
+        width: 45%;
     }
 }
