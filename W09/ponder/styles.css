@@ -21,12 +21,35 @@ justify-content: flex-end;
 gap: 20px
 }
 
+.media-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 hr{
 margin-top: 50px;
 }
 
-#gallery {
-display: flex;
 
+@media (min-width: 760px) {
+    .gallery-container .media-card {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    h2.gallery-container {
+        display: flex;
+    }
+    section.gallery-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    div.gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 50px;
+    }
 }
-              
