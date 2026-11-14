@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 25px 10px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    width: auto;
+    align-items: stretch;
+}
+
+div.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.container h1 {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.container .title img {
+    max-width: 75%;
+    height: 50px;
+}
+
+form {
+    display: flex;
+    width: 100%;
+}
+
+input#search {
+    flex: 1;
+    min-width: 0;
+    height: 35px;
+    border: .5px solid black;
+}
+
+form img {
+    max-width: 12px;
+    height: 12px;
+}
+
+form button {
+    flex: 0 0 40px;
+    height: 35px;
+    padding: 0;
+    border: .5px solid black;
+}
+
+hr {
+    display: flex;
+    height: 1px;
+    width: 100%;
+    margin: 20px;
+}
+
+.main {
+    width: auto;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.main img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+div.main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div.main img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.social img {
+    display: flex;
+    max-width: 25px;
+    height: 25px;
+}
+.social div {
+    display: flex;
+    font-size: 0.5rem;
+    margin: 10px;
+}
+
+
+@media (min-width: 600px) {
+    .container,
+    hr,
+    .main,
+    footer {
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    .container .title img {
+        max-width: none;
+        height: 80px;
+    }
+    input#search,
+    .main {
+        border-radius: 8px;
+    }
+
+    div.main {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .main img {
+        width: 230px;
+        max-width: none;
+        max-height: none;
+    }
+
+    .main p,
+    .main button {
+        margin: 8px 0;
+    }
+
+    .social {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
