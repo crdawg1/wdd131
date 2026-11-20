@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Header ---------- */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.title img {
+    height: 80px;
+}
+
+h1 {
+    margin: 0 0 0 5px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-variant: small-caps;
+    font-size: 2.5rem;
+}
+
+/* ---------- Search bar (one rounded box) ---------- */
+form {
+    display: flex;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+form:focus-within {
+    outline: 2px solid #4d90fe;
+}
+
+#search {
+    flex: 1;
+    min-width: 0;
+    padding: 0 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+form button {
+    width: 45px;
+    padding: 0;
+    border: none;
+    border-left: 1px solid black;
+    background: none;
+    cursor: pointer;
+}
+
+form button img {
+    width: 28px;
+    height: 28px;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #bbb;
+}
+
+/* ---------- Recipe card ---------- */
+.recipe {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.recipe img {
+    width: 100%;
+    max-width: 230px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.tags button {
+    padding: 1px 6px;
+    font-size: 1rem;
+}
+
+.recipe h2 {
+    margin: 20px 0 4px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-variant: small-caps;
+    font-size: 1.6rem;
+    font-weight: normal;
+    line-height: 1.15;
+    color: #2fa0d8;
+}
+
+.rating {
+    font-size: 1.1rem;
+}
+
+.recipe p {
+    margin: 12px 0 0;
+    font-size: 0.8rem;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    font-size: 0.6rem;
+}
+
+.social {
+    display: flex;
+    gap: 3px;
+}
+
+.social img {
+    display: block;
+    width: 26px;
+    height: 26px;
+    padding: 1px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* ---------- Wider screens ---------- */
+@media (min-width: 600px) {
+    .title img {
+        height: 155px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    form {
+        height: 52px;
+    }
+
+    #search {
+        font-size: 1.25rem;
+    }
+
+    form button {
+        width: 58px;
+    }
+
+    form button img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .recipe {
+        flex-direction: row;
+        gap: 22px;
+        padding: 20px;
+    }
+
+    .recipe img {
+        width: 295px;
+        max-width: none;
+        flex-shrink: 0;
+    }
+
+    .tags button {
+        font-size: 1.25rem;
+    }
+
+    .recipe h2 {
+        margin-top: 28px;
+        font-size: 2.4rem;
+    }
+
+    .rating {
+        font-size: 1.6rem;
+    }
+
+    .recipe p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.85rem;
+    }
+
+    .social img {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+    }
+}
