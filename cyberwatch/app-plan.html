@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberWatch Project Plan</title>
+  <link rel="stylesheet" href="site-plan.css">
+</head>
+<body>
+  <header>
+    <h1>CyberWatch Project Plan</h1>
+    <h2>Caden Andersen</h2>
+    <p>WDD 131</p>
+  </header>
+
+  <main>
+    <hr>
+
+    <section>
+      <h2>Overview</h2>
+
+      <h3>Purpose</h3>
+      <p>CyberWatch is a personal security dashboard that helps everyday users check whether a password has appeared in a known data breach, look up recent software vulnerabilities (CVEs), and track their own security habits. It uses free public APIs so that people can get clear, trustworthy security information without creating an account or sharing their passwords with anyone.</p>
+
+      <h3>Audience</h3>
+      <p>The audience is non-expert computer users, such as students, families, and small business owners, who want simple guidance on staying safe online. It is also useful to beginners in IT or cybersecurity who want a quick way to look up vulnerabilities in the software they use. All instructions are written in plain language with no technical background needed.</p>
+
+      <h3>Dynamic elements</h3>
+      <p>JavaScript will make the site interactive in four ways:</p>
+      <ul>
+        <li><strong>Breach checker:</strong> when the user submits a password, the script hashes it in the browser, sends only the first 5 characters of the hash to the Pwned Passwords API, and shows whether it was found in a breach. The full password is never sent or stored.</li>
+        <li><strong>CVE search and watchlist:</strong> the user searches by software name, the app fetches matching vulnerabilities from the NVD API, and results are shown as cards color-coded by severity. Users can sort or filter by severity and save software to a watchlist that persists in <code>localStorage</code>.</li>
+        <li><strong>Security checklist:</strong> an array of habit objects (enable MFA, update software, etc.) that users can check off, with a progress percentage that updates live.</li>
+        <li><strong>Feedback states:</strong> the page shows loading, error, and empty-result messages depending on what happens with each request.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Branding</h2>
+
+      <h3>Website Logo</h3>
+      <!-- Replace with your own logo file and update the width and height -->
+      <img style="max-width: 100%; height: auto;" src="images/image_dab7d0d5.jpg" alt="CyberWatch logo: a shield with a check mark" width="220" height="250">
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Style Guide</h2>
+
+      <h3>Color Palette</h3>
+      <p>Palette: deep navy, soft blue, teal, and alert red. Red is used only for warnings such as "breached" or "critical," always paired with a text label.</p>
+
+      <table class="colors">
+        <caption>CyberWatch color palette</caption>
+        <thead>
+          <tr>
+            <th>Primary</th>
+            <th>Secondary</th>
+            <th>Accent 1</th>
+            <th>Accent 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="primary"></td>
+            <td class="secondary"></td>
+            <td class="accent1"></td>
+            <td class="accent2"></td>
+          </tr>
+          <tr>
+            <td>#0B2545 (deep navy)</td>
+            <td>#8DA9C4 (soft blue)</td>
+            <td>#2EC4B6 (teal)</td>
+            <td>#E63946 (alert red)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Pseudocode</h2>
+      <ol>
+        <li>Define data:
+          <ul>
+            <li><code>checklistItems</code>: array of objects <code>{ id, task, category, done }</code></li>
+            <li><code>watchlist</code>: array of strings or objects; load from <code>localStorage</code> if it exists, otherwise start empty</li>
+          </ul>
+        </li>
+        <li>When the page loads:
+          <ul>
+            <li>Render the checklist and watchlist</li>
+            <li>Update the progress display</li>
+          </ul>
+        </li>
+        <li>Breach checker (on form submit):
+          <ul>
+            <li>If the input is empty, show an error and stop</li>
+            <li>Hash the password with SHA-1 in the browser</li>
+            <li>Split the hash into the first 5 characters (prefix) and the rest (suffix)</li>
+            <li>Fetch <code>range/{prefix}</code> from the Pwned Passwords API</li>
+            <li>Split the response into lines and look for the suffix</li>
+            <li>If found, show "Found in X breaches, don't use this password"; if not, show "Not found in known breaches"</li>
+            <li>If the fetch fails, show an error message</li>
+          </ul>
+        </li>
+        <li>CVE search (on form submit):
+          <ul>
+            <li>If the keyword is empty, show a message and stop</li>
+            <li>Show a "Loading..." message and disable the button</li>
+            <li>Fetch results from the NVD API</li>
+            <li>If there are no results, show "No vulnerabilities found"</li>
+            <li>Otherwise use <code>map</code> to turn each result into a card with ID, description, and score</li>
+            <li>Use <code>if/else</code> on the score to assign Low, Medium, High, or Critical</li>
+            <li>Re-enable the button when finished</li>
+          </ul>
+        </li>
+        <li>Filtering and sorting: when the user picks a severity, use <code>filter</code> on the results array and re-render</li>
+        <li>Watchlist:
+          <ul>
+            <li>On "Add": if the item is already in the array, tell the user; otherwise push it, save to <code>localStorage</code>, and re-render</li>
+            <li>On "Remove": filter it out, save, and re-render</li>
+            <li>On "Check again": run the CVE search for that item</li>
+          </ul>
+        </li>
+        <li>Checklist: on toggle, find the item, flip its <code>done</code> value, save, and recalculate progress with <code>filter(item =&gt; item.done).length / total</code></li>
+      </ol>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2>Wireframes</h2>
+
+      <h3>Landing page</h3>
+      <p>The landing page has a header with the CyberWatch logo and a navigation bar (Home, Tools, Checklist), which collapses into a hamburger menu on mobile. The hero section holds the headline "Check Passwords &amp; Track Software Vulnerabilities," a short tagline, a checklist progress summary card with a progress bar and a "View Checklist" link, and two large buttons for the Breach Checker and CVE Lookup tools. A footer links to About, Contact, and API Attribution. The desktop layout (1280px) places the two buttons side by side; the mobile layout (375px) stacks everything in a single column.</p>
+      <img style="max-width: 100%; height: auto;" src="images/wireframe-landing.webp" alt="Wireframe of the CyberWatch landing page: desktop layout on the left and mobile layout on the right, each showing the hero section, checklist progress card, and two tool buttons" width="1325" height="324">
+
+      <h3>Tools page</h3>
+      <p>The tools page starts with the Breach Checker section: a password input, a "Check Password" button, and a status line that shows Safe or a Breached warning. Below it, the CVE Search &amp; Watchlist section has a software search box, a Filter by Severity control, and a Sort control, followed by a results grid of cards. Each card shows the CVE ID, a severity badge, a short description, and a "+ Watchlist" button. The Saved Watchlist section lists each saved item with "Check Again" and "Remove" actions. On desktop the results grid has three columns; on mobile the cards stack in one column.</p>
+      <img style="max-width: 100%; height: auto;" src="images/wireframe-tools-page.webp" alt="Wireframe of the CyberWatch tools page: desktop layout on the left and mobile layout on the right, showing the breach checker, CVE search with filters, results grid, and saved watchlist" width="1325" height="386">
+
+      <h3>Checklist page</h3>
+      <p>The checklist page uses the same header and navigation as the other pages, with "Checklist" as the active link. It has a page title, a short instruction line, and an overall progress card with a progress bar, a count of completed tasks, and a "Reset checklist" link. Below that, the security habits are grouped into category cards (Accounts and Devices), each with checkboxes. On desktop the two category cards sit side by side; on mobile they stack in a single column.</p>
+      <img style="max-width: 100%; height: auto;" src="images/wireframe-checklist.webp" alt="Wireframe of the CyberWatch checklist page: desktop layout on the left and mobile layout on the right, showing the progress card and the Accounts and Devices checklist cards" width="1325" height="400">
+    </section>
+  </main>
+</body>
+</html>
